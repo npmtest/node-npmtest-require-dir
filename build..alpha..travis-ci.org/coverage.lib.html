@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-require-dir/require-dir/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-require-dir/node_modules/require-dir/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-require-dir">npmtest-require-dir (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-require-dir/require-dir/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-require-dir/node_modules/require-dir/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.11% <small>(8 / 61)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-require-dir/require-dir/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-require-dir/node_modules/require-dir/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -363,18 +365,18 @@
 149</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -522,28 +524,28 @@ var parentFile = parent.filename;
 var parentDir = Path.dirname(parentFile);
 delete require.cache[__filename];
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered">function requireDir(dir, opts) {</span>
+module.exports = <span class="fstat-no" title="function not covered" >function requireDir(dir, opts) {</span>
     // default arguments:
-<span class="cstat-no" title="statement not covered">    dir = dir || '.';</span>
-<span class="cstat-no" title="statement not covered">    opts = opts || {};</span>
+<span class="cstat-no" title="statement not covered" >    dir = dir || '.';</span>
+<span class="cstat-no" title="statement not covered" >    opts = opts || {};</span>
 &nbsp;
     // resolve the path to an absolute one:
-<span class="cstat-no" title="statement not covered">    dir = Path.resolve(parentDir, dir);</span>
+<span class="cstat-no" title="statement not covered" >    dir = Path.resolve(parentDir, dir);</span>
 &nbsp;
     // read the directory's files:
     // note that this'll throw an error if the path isn't a directory.
-<span class="cstat-no" title="statement not covered">    var files = FS.readdirSync(dir);</span>
+<span class="cstat-no" title="statement not covered" >    var files = FS.readdirSync(dir);</span>
 &nbsp;
     // to prioritize between multiple files with the same basename, we'll
     // first derive all the basenames and create a map from them to files:
-<span class="cstat-no" title="statement not covered">    var filesForBase = {};</span>
+<span class="cstat-no" title="statement not covered" >    var filesForBase = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; files.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">        var file = files[i];</span>
-<span class="cstat-no" title="statement not covered">        var ext = Path.extname(file);</span>
-<span class="cstat-no" title="statement not covered">        var base = Path.basename(file, ext);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        var file = files[i];</span>
+<span class="cstat-no" title="statement not covered" >        var ext = Path.extname(file);</span>
+<span class="cstat-no" title="statement not covered" >        var base = Path.basename(file, ext);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        (filesForBase[base] = filesForBase[base] || []).push(file);</span>
+<span class="cstat-no" title="statement not covered" >        (filesForBase[base] = filesForBase[base] || []).push(file);</span>
     }
 &nbsp;
     // then we'll go through each basename, and first check if any of the
@@ -554,114 +556,113 @@ module.exports = <span class="fstat-no" title="function not covered">function re
     // we create and return a map from basename to require()'d contents! and
     // if duplicates are asked for, we'll never short-circuit; we'll just add
     // to the map using the full filename as a key also.
-<span class="cstat-no" title="statement not covered">    var map = {};</span>
+<span class="cstat-no" title="statement not covered" >    var map = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for (var base in filesForBase) {</span>
+<span class="cstat-no" title="statement not covered" >    for (var base in filesForBase) {</span>
         // protect against enumerable object prototype extensions:
-<span class="cstat-no" title="statement not covered">        if (!filesForBase.hasOwnProperty(base)) {</span>
-<span class="cstat-no" title="statement not covered">            continue;</span>
+<span class="cstat-no" title="statement not covered" >        if (!filesForBase.hasOwnProperty(base)) {</span>
+<span class="cstat-no" title="statement not covered" >            continue;</span>
         }
 &nbsp;
         // go through the files for this base and check for directories. we'll
         // also create a hash "set" of the non-dir files so that we can
         // efficiently check for existence in the next step:
-<span class="cstat-no" title="statement not covered">        var files = filesForBase[base];</span>
-<span class="cstat-no" title="statement not covered">        var filesMinusDirs = {};</span>
+<span class="cstat-no" title="statement not covered" >        var files = filesForBase[base];</span>
+<span class="cstat-no" title="statement not covered" >        var filesMinusDirs = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        for (var i = 0; i &lt; files.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">            var file = files[i];</span>
-<span class="cstat-no" title="statement not covered">            var path = Path.resolve(dir, file);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            var file = files[i];</span>
+<span class="cstat-no" title="statement not covered" >            var path = Path.resolve(dir, file);</span>
 &nbsp;
             // ignore the calling file:
-<span class="cstat-no" title="statement not covered">            if (path === parentFile) {</span>
-<span class="cstat-no" title="statement not covered">                continue;</span>
+<span class="cstat-no" title="statement not covered" >            if (path === parentFile) {</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (FS.statSync(path).isDirectory()) {</span>
-<span class="cstat-no" title="statement not covered">                if (opts.recurse) {</span>
-<span class="cstat-no" title="statement not covered">                    if (base === 'node_modules') {</span>
-<span class="cstat-no" title="statement not covered">                        continue;</span>
+<span class="cstat-no" title="statement not covered" >            if (FS.statSync(path).isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >                if (opts.recurse) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (base === 'node_modules') {</span>
+<span class="cstat-no" title="statement not covered" >                        continue;</span>
                     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">                    map[base] = requireDir(path, opts);</span>
+<span class="cstat-no" title="statement not covered" >                    map[base] = requireDir(path, opts);</span>
 &nbsp;
                     // if duplicates are wanted, key off the full name too:
-<span class="cstat-no" title="statement not covered">                    if (opts.duplicates) {</span>
-<span class="cstat-no" title="statement not covered">                        map[file] = map[base];</span>
+<span class="cstat-no" title="statement not covered" >                    if (opts.duplicates) {</span>
+<span class="cstat-no" title="statement not covered" >                        map[file] = map[base];</span>
                     }
                 }
             } else {
-<span class="cstat-no" title="statement not covered">                filesMinusDirs[file] = path;</span>
+<span class="cstat-no" title="statement not covered" >                filesMinusDirs[file] = path;</span>
             }
         }
 &nbsp;
         // if we're recursing and we already encountered a directory for this
         // basename, we're done for this base if we're ignoring duplicates:
-<span class="cstat-no" title="statement not covered">        if (map[base] &amp;&amp; !opts.duplicates) {</span>
-<span class="cstat-no" title="statement not covered">            continue;</span>
+<span class="cstat-no" title="statement not covered" >        if (map[base] &amp;&amp; !opts.duplicates) {</span>
+<span class="cstat-no" title="statement not covered" >            continue;</span>
         }
 &nbsp;
         // otherwise, go through and try each require.extension key!
-<span class="cstat-no" title="statement not covered">        for (ext in require.extensions) {</span>
+<span class="cstat-no" title="statement not covered" >        for (ext in require.extensions) {</span>
             // again protect against enumerable object prototype extensions:
-<span class="cstat-no" title="statement not covered">            if (!require.extensions.hasOwnProperty(ext)) {</span>
-<span class="cstat-no" title="statement not covered">                continue;</span>
+<span class="cstat-no" title="statement not covered" >            if (!require.extensions.hasOwnProperty(ext)) {</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
             }
 &nbsp;
             // if a file exists with this extension, we'll require() it:
-<span class="cstat-no" title="statement not covered">            var file = base + ext;</span>
-<span class="cstat-no" title="statement not covered">            var path = filesMinusDirs[file];</span>
+<span class="cstat-no" title="statement not covered" >            var file = base + ext;</span>
+<span class="cstat-no" title="statement not covered" >            var path = filesMinusDirs[file];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (path) {</span>
+<span class="cstat-no" title="statement not covered" >            if (path) {</span>
                 // ignore TypeScript declaration files. They should never be
                 // `require`d
-<span class="cstat-no" title="statement not covered">                if (/\.d\.ts$/.test(path)) {</span>
-<span class="cstat-no" title="statement not covered">                    continue;</span>
+<span class="cstat-no" title="statement not covered" >                if (/\.d\.ts$/.test(path)) {</span>
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
                 }
 &nbsp;
                 // if duplicates are wanted, key off the full name always, and
                 // also the base if it hasn't been taken yet (since this ext
                 // has higher priority than any that follow it). if duplicates
                 // aren't wanted, we're done with this basename.
-<span class="cstat-no" title="statement not covered">                if (opts.duplicates) {</span>
-<span class="cstat-no" title="statement not covered">                    map[file] = require(path);</span>
-<span class="cstat-no" title="statement not covered">                    if (!map[base]) {</span>
-<span class="cstat-no" title="statement not covered">                        map[base] = map[file];</span>
+<span class="cstat-no" title="statement not covered" >                if (opts.duplicates) {</span>
+<span class="cstat-no" title="statement not covered" >                    map[file] = require(path);</span>
+<span class="cstat-no" title="statement not covered" >                    if (!map[base]) {</span>
+<span class="cstat-no" title="statement not covered" >                        map[base] = map[file];</span>
                     }
                 } else {
-<span class="cstat-no" title="statement not covered">                    map[base] = require(path);</span>
-<span class="cstat-no" title="statement not covered">                    break;</span>
+<span class="cstat-no" title="statement not covered" >                    map[base] = require(path);</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
                 }
             }
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (opts.camelcase) {</span>
-<span class="cstat-no" title="statement not covered">        for (var base in map) {</span>
+<span class="cstat-no" title="statement not covered" >    if (opts.camelcase) {</span>
+<span class="cstat-no" title="statement not covered" >        for (var base in map) {</span>
             // protect against enumerable object prototype extensions:
-<span class="cstat-no" title="statement not covered">            if (!map.hasOwnProperty(base)) {</span>
-<span class="cstat-no" title="statement not covered">                continue;</span>
+<span class="cstat-no" title="statement not covered" >            if (!map.hasOwnProperty(base)) {</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            map[toCamelCase(base)] = map[base];</span>
+<span class="cstat-no" title="statement not covered" >            map[toCamelCase(base)] = map[base];</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return map;</span>
+<span class="cstat-no" title="statement not covered" >    return map;</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered">function toCamelCase(str) {</span>
-<span class="cstat-no" title="statement not covered">    return str.replace(/[_-][a-z]/ig, <span class="fstat-no" title="function not covered">function (s) {</span></span>
-<span class="cstat-no" title="statement not covered">        return s.substring(1).toUpperCase();</span>
+<span class="fstat-no" title="function not covered" >function toCamelCase(str) {</span>
+<span class="cstat-no" title="statement not covered" >    return str.replace(/[_-][a-z]/ig, <span class="fstat-no" title="function not covered" >function (s) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return s.substring(1).toUpperCase();</span>
     });
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 08:30:04 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 21:50:59 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
