@@ -1,4 +1,7 @@
-# test coverage for  [require-dir (v0.3.1)](https://github.com/aseemk/requireDir)  [![npm package](https://img.shields.io/npm/v/npmtest-require-dir.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-require-dir) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-require-dir.svg)](https://travis-ci.org/npmtest/node-npmtest-require-dir)
+# npmtest-require-dir
+
+#### basic test-coverage for  [require-dir (v0.3.1)](https://github.com/aseemk/requireDir)  [![npm package](https://img.shields.io/npm/v/npmtest-require-dir.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-require-dir) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-require-dir.svg)](https://travis-ci.org/npmtest/node-npmtest-require-dir)
+
 #### Helper to require() directories.
 
 [![NPM](https://nodei.co/npm/require-dir.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/require-dir)
@@ -71,7 +74,8 @@
     "scripts": {
         "test": "node test"
     },
-    "version": "0.3.1"
+    "version": "0.3.1",
+    "bin": {}
 }
 ```
 
